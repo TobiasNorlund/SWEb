@@ -1,0 +1,14 @@
+.annotation {
+  cursor: pointer;
+}
+
+.row {
+  font-size: small;
+  padding-left: 5px;
+  min-height: 20px;
+  border: 1px solid white;
+}
+
+.no-select {
+  user-select: none;
+}
