@@ -1,7 +1,7 @@
 
 ![SWEb: A Large Web Dataset for the Scandinavian Languages](sweb.jpg)
 
-This is the official source code repository for the [Scandinavian Web (SWEb) dataset](https://huggingface.co/datasets/AI-Sweden-Models/SWEb) and corresponding [paper](#link).
+This is the official source code repository for the [Scandinavian Web (SWEb) dataset](https://huggingface.co/datasets/AI-Sweden-Models/SWEb) and corresponding [paper](https://arxiv.org/abs/2410.04456).
 
 SWEb is a _trillion token scale_ pre-training dataset for the Swedish, Danish, Norwegian and Icelandic languages. We construct SWEb using a novel pipeline and source data from 98 Common Crawl dumps. 
 
