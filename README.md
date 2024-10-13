@@ -71,7 +71,16 @@ To train this model, we build a custom [annotation tool](annotation_tool/) that 
 
 ![Screenshot of our annotation tool to label primary content of webpages](annotation_tool.png)
 
-We release openly our annotated [data](annotation_tool/backend/data/data.jsonl), the [training code](pipeline/line_classification/train.py) and the resulting [model](https://huggingface.co/AI-Sweden-Models/SWEb-markdown-extractor).
+To run the annotation tool, run:
+
+```bash
+cd annotation_tool
+docker compose up
+```
+
+Then navigate to [http://localhost:3000/0](http://localhost:3000/0).
+
+We release openly our annotated [data](annotation_tool/backend/data/data.jsonl), the [training code](pipeline/line_classification/train.py) and the resulting [extraction model](https://huggingface.co/AI-Sweden-Models/SWEb-markdown-extractor).
 
 
 ## Pipeline
