@@ -1,0 +1,3 @@
+[submodule "cc_net_repo"]
+	path = cc_net_repo
+	url = git@github.com:TobiasNorlund/cc_net.git
