@@ -78,7 +78,7 @@ cd annotation_tool
 docker compose up
 ```
 
-Then navigate to [http://localhost:3000/0](http://localhost:3000/0).
+Then navigate to [http://localhost:8080/0](http://localhost:8080/0).
 
 We release openly our annotated [data](annotation_tool/backend/data/data.jsonl), the [training code](pipeline/line_classification/train.py) and the resulting [extraction model](https://huggingface.co/AI-Sweden-Models/SWEb-markdown-extractor).
 
