@@ -19,7 +19,8 @@ import os
 import requests
 from torch.nn.functional import sigmoid
 from pipeline.warc_processing import ConvertToMarkdown
-from transformers import AutoTokenizer, AutoModelForTokenClassification
+from pipeline.line_classification.model import LineClassificationModel
+from transformers import AutoTokenizer
 
 # 1. Download a webpage
 resp = requests.get("https://www.ai.se/sv/nyheter/nobelpriset-i-fysik-och-kemi-till-banbrytande-ai-forskning")
@@ -29,7 +30,7 @@ markdown = ConvertToMarkdown.convert_html_to_markdown(resp.content, pandoc_path=
 
 # 3. Extract text by classifying each line using trained model
 tokenizer = AutoTokenizer.from_pretrained("AI-Sweden-Models/SWEb-markdown-extractor")
-model = AutoModelForTokenClassification.from_pretrained("AI-Sweden-Models/SWEb-markdown-extractor").eval()
+model = LineClassificationModel.from_pretrained("AI-Sweden-Models/SWEb-markdown-extractor").eval()
 tokens = tokenizer(markdown.replace("\n", tokenizer.sep_token), return_tensors="pt", add_special_tokens=False, truncation=True)
 tokens["line_sep_token_ids"] = (tokens.input_ids[0] == tokenizer.sep_token_id).nonzero()[None, :, 0]
 logits = model(**tokens)[0]
